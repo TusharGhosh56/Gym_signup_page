@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymX - Your Fitness Journey Starts Here</title>
-
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     </script>
+    
+    
     <style>
         * {
             padding: 0;
@@ -19,44 +21,6 @@
             background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
-        }
-
-        nav {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-        }
-
-        nav ul li a:hover {
-            color: #333;
-            background-color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        #navibar img {
-            border-radius: 50%;
-            height: 50px;
-            margin-right: 20px;
         }
         .text ul li{
             border: #333 solid;
@@ -81,13 +45,7 @@
                 width: 80%;
             }
 
-            nav ul {
-                flex-direction: column;
-            }
-
-            nav ul li {
-                margin: 5px 0;
-            }
+            
         }
         footer {
             background-color: #333;
@@ -122,20 +80,38 @@
             font-size: 0.9em;
         }
     </style>
+
 </head>
 
 <body>
-    <nav>
-        <div id="navibar">
-            <img src="https://cdn5.vectorstock.com/i/1000x1000/19/09/information-icon-dumbbell-vector-10311909.jpg" alt="GymX Logo">
-            <ul>
-                <li><a class="item" href="homepage.html">Home</a></li>
-                <li><a class="item" href="#">Services</a></li>
-                <li><a class="item" href="about_us.html">About Us</a></li>
-                <li><a class="item" href="contact_us.html">Contact Us</a></li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="https://cdn5.vectorstock.com/i/1000x1000/19/09/information-icon-dumbbell-vector-10311909.jpg" width="30" height="30" class="d-inline-block align-top" alt="GymX Logo">
+            GymX
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="homepage.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about_us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact_us.html">Contact Us</a>
+                </li>
             </ul>
         </div>
     </nav>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
     <section>
         <div id="Services">
