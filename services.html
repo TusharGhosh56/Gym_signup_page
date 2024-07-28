@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymX - Your Fitness Journey Starts Here</title>
+
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            color: #333;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        #navibar img {
+            border-radius: 50%;
+            height: 50px;
+            margin-right: 20px;
+        }
+        .text ul li{
+            border: #333 solid;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .text h1{
+            padding: 20px;
+            text-align: center;
+            justify-content: center;
+            font-size: large;
+        }
+
+        @media (max-width: 768px) {
+            #home {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .primary-home {
+                width: 80%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: olivedrab;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="navibar">
+            <img src="https://cdn5.vectorstock.com/i/1000x1000/19/09/information-icon-dumbbell-vector-10311909.jpg" alt="GymX Logo">
+            <ul>
+                <li><a class="item" href="homepage.html">Home</a></li>
+                <li><a class="item" href="#">Services</a></li>
+                <li><a class="item" href="about_us.html">About Us</a></li>
+                <li><a class="item" href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section>
+        <div id="Services">
+            <div class="text">
+                <h1>Services</h1>
+                <ul>
+                    <li>
+                        <p style="font-weight: bold;">1. Personal Training:</p><br>
+                        •One-on-One Training: Personalized workout sessions with a certified trainer.<br>
+                        •Group Training: Small group sessions led by a trainer for motivation and support.<br>
+                    </li>
+                    <li>
+                        <p style="font-weight: bold;">2. Group Fitness Classes:</p><br>
+                        •Yoga: Classes that focus on flexibility, balance, and relaxation.<br>
+                        •Pilates: Exercises that improve core strength and posture.<br>
+                        •Spinning/Cycling: High-energy cardio workouts on stationary bikes.<br>
+                        •Zumba: Dance-based fitness classes.<br>
+                        •HIIT (High-Intensity Interval Training): Short bursts of intense exercise followed by rest.<br>
+                        •Aerobics: Cardiovascular workouts set to music.<br>
+                        •Martial Arts: Classes like kickboxing or self-defense.<br>
+                    </li>
+                    <li>
+                        <p style="font-weight: bold;"> 3. Cardio and Strength Equipment:</p><br>
+                        •Treadmills, Ellipticals, and Bikes: Machines for cardiovascular workouts.<br>
+                        •Weight Machines and Free Weights: Equipment for strength training.<br>
+                        •Functional Training Equipment: Items like kettlebells, resistance bands, and medicine balls.<br>
+                    </li>
+                    <li>
+                        <p style="font-weight: bold;"> 4. Wellness and Recovery Services:</p><br>
+                        •Massage Therapy: Professional massages to aid in muscle recovery.<br>
+                        •Sauna and Steam Rooms: Facilities for relaxation and detoxification.<br>
+                        •Hydrotherapy: Use of water for pain relief and treatment.<br>
+                        •Cryotherapy: Cold therapy to reduce inflammation and enhance recovery.<br>
+                    </li>
+                    <li>
+                        <p style="font-weight: bold;"> 5. Nutritional Counselings:</p><br>
+                        •Diet Plans: Customized meal plans to meet fitness goals.<br>
+                        •Nutrition Workshops: Educational sessions on healthy eating.<br>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+            </ul>
+            <p>&copy; 2024 GymX. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

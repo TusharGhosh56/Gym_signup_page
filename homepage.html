@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymX - Your Fitness Journey Starts Here</title>
+
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            color: #333;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        #navibar img {
+            border-radius: 50%;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        #maintext {
+            background-color: #444;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: olivedrab;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: darkgreen;
+        }
+
+        #home {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 50px 20px;
+        }
+
+        .primary-home {
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .primary-home img {
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .primary-home p {
+            font-size: 0.9em;
+        }
+
+        
+        @media (max-width: 768px) {
+            #home {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .primary-home {
+                width: 80%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: olivedrab;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="navibar">
+            <img src="https://cdn5.vectorstock.com/i/1000x1000/19/09/information-icon-dumbbell-vector-10311909.jpg" alt="GymX Logo">
+            <ul>
+                <li><a class="item" href="#">Home</a></li>
+                <li><a class="item" href="services.html">Services</a></li>
+                <li><a class="item" href="about_us.html">About Us</a></li>
+                <li><a class="item" href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="section1">
+        <div id="maintext">
+            <h1>Welcome To GymX</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit magni dolorum repellat distinctio,
+                aspernatur cum enim suscipit error exercitationem quaerat, officiis, quisquam quas earum aliquam! Vero
+                libero ipsum, vel sed amet reiciendis?</p>
+            <a href="form.html" class="btn">Join Now</a>
+        </div>
+    </section>
+    <section id="section2">
+        <div id="home">
+            <div class="primary-home">
+                <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
+                <h3>Personal Training</h3>
+                <p>Our personal trainers are here to guide and motivate you through every step of your fitness journey.</p>
+            </div>
+            <div class="primary-home">
+                <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
+                <h3>Group Classes</h3>
+                <p>Join our dynamic group classes and experience a new level of energy and fun while working out.</p>
+            </div>
+            <div class="primary-home">
+                <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
+                <h3>Nutrition Guidance</h3>
+                <p>Receive expert advice on how to fuel your body for optimal performance and health.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+            </ul>
+            <p>&copy; 2024 GymX. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

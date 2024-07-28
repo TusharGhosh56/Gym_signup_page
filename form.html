@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymX - Your Fitness Journey Starts Here</title>
+    <!-- Bootstrap CSS for social media icons -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            color: #333;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        #navibar img {
+            border-radius: 50%;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        #section3 {
+            padding: 40px;
+            margin: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #section3 h1 {
+            margin-bottom: 20px;
+        }
+
+        #section3 .form {
+            justify-content: center;
+            align-items: center;
+            border: 2px solid;
+            border-color: black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #section3 form input[type="text"],
+        #section3 form select,
+        #section3 form input[type="radio"],
+        #section3 form input[type="checkbox"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+        }
+
+        #section3 form label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        .btn {
+            background-color: olivedrab;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: darkgreen;
+        }
+
+        @media (max-width: 768px) {
+            #home {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: olivedrab;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="navibar">
+            <img src="https://cdn5.vectorstock.com/i/1000x1000/19/09/information-icon-dumbbell-vector-10311909.jpg"
+                alt="GymX Logo">
+            <ul>
+                <li><a class="item" href="homepage.html">Home</a></li>
+                <li><a class="item" href="services.html">Services</a></li>
+                <li><a class="item" href="about_us.html">About Us</a></li>
+                <li><a class="item" href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div id="section3">
+            <div class="form">
+                <h1>Registration Form</h1>
+                <form action="\action.php" method="post">
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" required>
+
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname" required>
+
+                    <label for="number">Phone Number:</label>
+                    <input type="text" id="number" name="number" required>
+
+                    <label for="gender">Gender:</label>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+
+                    <label for="membership">Membership Type:</label>
+                    <select id="membership" name="membership" required>
+                        <option value="">Select</option>
+                        <option value="basic">Basic</option>
+                        <option value="premium">Premium</option>
+                        <option value="vip">VIP</option>
+                    </select>
+
+                    <label for="interests">Interests:</label>
+                    <div>
+                        <input type="checkbox" id="weightlifting" name="interests" value="weightlifting">
+                        <label for="weightlifting">Weightlifting</label>
+                        <input type="checkbox" id="cardio" name="interests" value="cardio">
+                        <label for="cardio">Cardio</label>
+                        <input type="checkbox" id="yoga" name="interests" value="yoga">
+                        <label for="yoga">Yoga</label>
+                        <input type="checkbox" id="swimming" name="interests" value="swimming">
+                        <label for="swimming">Swimming</label>
+                    </div>
+
+                    <input type="submit" value="Register" class="btn">
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+            </ul>
+            <p>&copy; 2024 GymX. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS for social media icons -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymX - Your Fitness Journey Starts Here</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            color: #333;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        #navibar img {
+            border-radius: 50%;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .text ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .text ul li {
+            justify-content: center;
+            text-align: center;
+            width: 30%;
+            border: #333 solid;
+            border-radius: 5px;
+            padding: 30px;
+            margin: 10px;
+        }
+
+        .text h1 {
+            padding: 20px;
+            text-align: center;
+            justify-content: center;
+            font-size: large;
+        }
+
+        @media (max-width: 768px) {
+            #home {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .primary-home {
+                width: 80%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: olivedrab;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="navibar">
+            <img src="https://cdn5.vectorstock.com/i/1000x1000/19/09/information-icon-dumbbell-vector-10311909.jpg" alt="GymX Logo">
+            <ul>
+                <li><a class="item" href="homepage.html">Home</a></li>
+                <li><a class="item" href="services.html">Services</a></li>
+                <li><a class="item" href="#">About Us</a></li>
+                <li><a class="item" href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section>
+        <div id="Services">
+            <div class="text">
+                <h1>About Us</h1>
+                <ul>
+                    <li>
+                        <p style="font-weight: bold;">Our Mission</p><br>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero enim delectus, quidem reprehenderit provident tempore autem numquam, iure, facilis inventore quo ratione. Fugit nobis libero repudiandae omnis ex officiis nihil.<br>
+                        <img src="data:image/jpeg;base64,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" alt="Fitness Image" style="width: 100%; height: auto; margin-top: 10px;">
+                    </li>
+                    <li>
+                        <p style="font-weight: bold;">Our Facilities</p><br>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero enim delectus, quidem reprehenderit provident tempore autem numquam, iure, facilis inventore quo ratione. Fugit nobis libero repudiandae omnis ex officiis nihil.<br>
+                        <audio controls style="width: 100%; margin-top: 10px;">
+                            <source src="audio/sample-audio.mp3" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </li>
+                    <li>
+                        <p style="font-weight: bold;">Our Community</p><br>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero enim delectus, quidem reprehenderit provident tempore autem numquam, iure, facilis inventore quo ratione. Fugit nobis libero repudiandae omnis ex officiis nihil.<br>
+                        <video controls style="width: 100%; margin-top: 10px;">
+                            <source src="ZERO EXCUSES.mp4.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+            </ul>
+            <p>&copy; 2024 GymX. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
