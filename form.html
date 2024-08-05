@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymX - Your Fitness Journey Starts Here</title>
-    
-    
-   
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         * {
             padding: 0;
@@ -81,24 +80,42 @@
             padding: 20px;
             border-radius: 10px;
         }
-
-        #section3 form input[type="text"],
+        #section3 form input[type="text"]{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            width: 300%;
+            max-width: 300px;
+            margin: 10px auto;
+        }
+        
         #section3 form select,
         #section3 form input[type="radio"],
         #section3 form input[type="checkbox"] {
-            padding: 10px;
-            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
             display: block;
             width: 100%;
-            max-width: 300px;
+            max-width: 100px;
             margin: 10px auto;
         }
-
-        #section3 form label {
+        #section3 form input[type="radio"],
+        #section3 form input[type="checkbox"]  {
             display: block;
-            margin: 5px 0;
+            margin: 5px;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .flex-row label,
+        .flex-row input[type="radio"],
+        .flex-row input[type="checkbox"] {
+            margin: 0 2px;
         }
 
         .btn {
@@ -163,7 +180,6 @@
             font-size: 0.9em;
         }
     </style>
-
 </head>
 
 <body>
@@ -184,7 +200,7 @@
         <div id="section3">
             <div class="form">
                 <h1>Registration Form</h1>
-                <form action="\action.php" method="post">
+                <form id="registrationForm">
                     <label for="fname">First Name:</label>
                     <input type="text" id="fname" name="fname" required>
 
@@ -193,9 +209,10 @@
 
                     <label for="number">Phone Number:</label>
                     <input type="text" id="number" name="number" required>
-
+                    <br>
                     <label for="gender">Gender:</label>
-                    <div>
+                    <br>
+                    <div class="flex-row">
                         <input type="radio" id="male" name="gender" value="male" required>
                         <label for="male">Male</label>
                         <input type="radio" id="female" name="gender" value="female">
@@ -203,17 +220,19 @@
                         <input type="radio" id="other" name="gender" value="other">
                         <label for="other">Other</label>
                     </div>
-
+                    <br><br>
                     <label for="membership">Membership Type:</label>
+                    <br>
                     <select id="membership" name="membership" required>
                         <option value="">Select</option>
                         <option value="basic">Basic</option>
                         <option value="premium">Premium</option>
                         <option value="vip">VIP</option>
                     </select>
-
+                    <br><br>
                     <label for="interests">Interests:</label>
-                    <div>
+                    <br>
+                    <div class="flex-row">
                         <input type="checkbox" id="weightlifting" name="interests" value="weightlifting">
                         <label for="weightlifting">Weightlifting</label>
                         <input type="checkbox" id="cardio" name="interests" value="cardio">
@@ -223,12 +242,33 @@
                         <input type="checkbox" id="swimming" name="interests" value="swimming">
                         <label for="swimming">Swimming</label>
                     </div>
-
+                    <br>
                     <input type="submit" value="Register" class="btn">
                 </form>
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Form Submitted</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your form has been submitted successfully!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div>
             <ul>
@@ -241,7 +281,17 @@
         </div>
     </footer>
 
-  
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#registrationForm').on('submit', function (e) {
+                e.preventDefault();
+                $('#successModal').modal('show');
+            });
+        });
+    </script>
 </body>
 
 </html>

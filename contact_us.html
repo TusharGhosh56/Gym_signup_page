@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymX - Your Fitness Journey Starts Here</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         * {
             padding: 0;
@@ -14,6 +15,7 @@
         }
 
         body {
+            background: url('image3.jpg');
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
@@ -45,7 +47,9 @@
             align-items: center;
         }
 
-        #section3 form input[type="text"], #section3 form input[type="email"], #section3 form textarea {
+        #section3 form input[type="text"],
+        #section3 form input[type="email"],
+        #section3 form textarea {
             padding: 10px;
             margin: 10px 0;
             width: 80%;
@@ -54,7 +58,9 @@
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        #section3 form input[type="text"]:hover, #section3 form input[type="email"]:hover, #section3 form textarea:hover {
+        #section3 form input[type="text"]:hover,
+        #section3 form input[type="email"]:hover,
+        #section3 form textarea:hover {
             border-color: #007bff;
             box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
         }
@@ -117,26 +123,26 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             <img src="https://cdn5.vectorstock.com/i/1000x1000/19/09/information-icon-dumbbell-vector-10311909.jpg"
-                width="30" height="30" class="d-inline-block align-top" alt="GymX Logo">
+                width="30" height="30" class="flex-direction" alt="GymX Logo">
             GymX
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="page2.html">Home</a>
+                    <a class="nav-link" href="homepage.html"><i class="fas fa-home"></i> Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="page1.html">Services</a>
+                    <a class="nav-link" href="services.html"><i class="fas fa-dumbbell"></i> Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="page4.html">About Us</a>
+                    <a class="nav-link" href="about_us.html"><i class="fas fa-info-circle"></i> About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="page5.html">Contact Us</a>
+                    <a class="nav-link" href="contact_us.html"><i class="fas fa-envelope"></i> Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -165,16 +171,17 @@
                     <li>Saturday: 8:00 AM - 8:00 PM</li><br>
                     <li>Sunday: 9:00 AM - 6:00 PM</li><br>
                 </ul>
+                <br>
                 <h2>Visit Us</h2><br>
                 Feel free to stop by during our business hours for a tour of our facilities or to speak with a member of
                 our team.
 
                 <br>
-
+                <br>
                 <h2>Send Us a Message</h2><br>
                 Have a question or feedback? Use the form below to send us a message, and we'll get back to you as soon
                 as possible.
-
+                <br><br>
                 <form>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Name" required>
@@ -187,17 +194,16 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
-
+                <br><br>
                 <h2>Follow Us</h2><br>
                 Stay updated with the latest news, events, and promotions by following us on social media.
                 <ul>
-                    <li>Facebook</li><br>
-                    <li>Instagram</li><br>
-                    <li>Twitter</li><br>
+                    <li>Facebook:<a href="https://www.facebook.com/">www.facebook.com</a></li><br>
+                    <li>Instagram:<a href="https://www.instagram.com/">www.intagram.com</a></li><br>
+                    <li>Twitter:<a href="https://twitter.com/?lang=en">www.twitter.com</a></li><br>
                 </ul>
-                For quick answers, check out our FAQ page. You might find the information you need right away.
-            </div>
-        </div>
+                <h2>Find Us</h2>
+                <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=77.60169267654419%2C12.929771824182472%2C77.61173486709596%2C12.93737380710079&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=17/12.93357/77.60671">View Larger Map</a></small>        </div>
     </section>
     <footer>
         <div>
