@@ -12,6 +12,13 @@
             padding: 0;
             margin: 0;
             box-sizing: border-box;
+            font-size: 20px
+        }
+
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         body {
@@ -19,6 +26,12 @@
             background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         nav {
@@ -58,13 +71,22 @@
             height: 50px;
             margin-right: 20px;
         }
-
+        
         #maintext {
             background-color: #444;
             color: white;
             text-align: center;
             padding: 100px 20px;
-        }
+            font-size: 24px; 
+    }
+
+        #maintext h1 {
+            font-size: 36px; 
+    }
+
+        #maintext p {
+            font-size: 20px; 
+    }
 
         .btn {
             display: inline-block;
@@ -108,7 +130,6 @@
             font-size: 0.9em;
         }
 
-        
         @media (max-width: 768px) {
             #home {
                 flex-direction: column;
@@ -127,6 +148,7 @@
                 margin: 5px 0;
             }
         }
+
         footer {
             background-color: #333;
             color: #fff;
@@ -163,45 +185,47 @@
 </head>
 
 <body>
-    <nav>
-        <div id="navibar">
-            <img src="https://cdn5.vectorstock.com/i/1000x1000/19/09/information-icon-dumbbell-vector-10311909.jpg" alt="GymX Logo">
-            <ul>
-                <li><a class="item" href="#">Home</a></li>
-                <li><a class="item" href="services.html">Services</a></li>
-                <li><a class="item" href="about_us.html">About Us</a></li>
-                <li><a class="item" href="contact_us.html">Contact Us</a></li>
-            </ul>
-        </div>
-    </nav>
-    <section id="section1">
-        <div id="maintext">
-            <h1>Welcome To GymX</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit magni dolorum repellat distinctio,
-                aspernatur cum enim suscipit error exercitationem quaerat, officiis, quisquam quas earum aliquam! Vero
-                libero ipsum, vel sed amet reiciendis?</p>
-            <a href="form.html" class="btn">Join Now</a>
-        </div>
-    </section>
-    <section id="section2">
-        <div id="home">
-            <div class="primary-home">
-                <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
-                <h3>Personal Training</h3>
-                <p>Our personal trainers are here to guide and motivate you through every step of your fitness journey.</p>
+    <div class="container">
+        <nav>
+            <div id="navibar">
+                <img src="Fitness Logo.png" alt="GymX Logo">
+                <ul>
+                    <li><a class="item" href="#">Home</a></li>
+                    <li><a class="item" href="services.html">Services</a></li>
+                    <li><a class="item" href="about_us.html">About Us</a></li>
+                    <li><a class="item" href="contact_us.html">Contact Us</a></li>
+                </ul>
             </div>
-            <div class="primary-home">
-                <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
-                <h3>Group Classes</h3>
-                <p>Join our dynamic group classes and experience a new level of energy and fun while working out.</p>
+        </nav>
+        <section id="section1">
+            <div id="maintext">
+                <h1>Welcome To GymX</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit magni dolorum repellat distinctio,
+                    aspernatur cum enim suscipit error exercitationem quaerat, officiis, quisquam quas earum aliquam! Vero
+                    libero ipsum, vel sed amet reiciendis?</p>
+                <a href="form.html" class="btn">Join Now</a>
             </div>
-            <div class="primary-home">
-                <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
-                <h3>Nutrition Guidance</h3>
-                <p>Receive expert advice on how to fuel your body for optimal performance and health.</p>
+        </section>
+        <section id="section2">
+            <div id="home">
+                <div class="primary-home">
+                    <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
+                    <h3>Personal Training</h3>
+                    <p>Our personal trainers are here to guide and motivate you through every step of your fitness journey.</p>
+                </div>
+                <div class="primary-home">
+                    <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
+                    <h3>Group Classes</h3>
+                    <p>Join our dynamic group classes and experience a new level of energy and fun while working out.</p>
+                </div>
+                <div class="primary-home">
+                    <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
+                    <h3>Nutrition Guidance</h3>
+                    <p>Receive expert advice on how to fuel your body for optimal performance and health.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <footer>
         <div>
             <ul>
