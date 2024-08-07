@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymX - Your Fitness Journey Starts Here</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
     <style>
         * {
             padding: 0;
@@ -36,7 +37,19 @@
             list-style: none;
             justify-content: center;
         }
+        #navibar a {
+            color: white;
+            text-decoration: none;
+        }
 
+        #navibar img {
+            border-radius: 50%;
+    height: 50px;
+    display: inline;
+    justify-content: center;
+    margin-top: 18px;
+    margin-right: 0px;
+        }
         nav ul li {
             margin: 0 15px;
         }
@@ -56,10 +69,22 @@
 
         #navibar img {
             border-radius: 50%;
-            height: 50px;
-            margin-right: 20px;
+    height: 60px;
+    margin-right: 4px;
+        }
+        #navibar h1 {
+            display: inline;
+    font-size: 36px;
+    margin: 3px;
+    padding: 1px;
+    margin-bottom: 10px;
+    margin-top: 26px;
         }
 
+        #navibar .logo {
+            display: flex;
+            align-items: center;
+        }
         #section3 {
             padding: 40px;
             margin: 20px;
@@ -180,21 +205,26 @@
             margin-top: 10px;
             font-size: 0.9em;
         }
+        body nav a h1{
+            display: inline;
+            font-size: 36px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
 <body>
     <nav>
         <div id="navibar">
-            <a>
-            <img src="Fitness Logo.png" alt="GymX Logo">
-            GymX
+            <a href="#" class="logo">
+                <img src="gym-near-svgrepo-com.svg" alt="GymX Logo">
+                <h1>GymX</h1>
             </a>
             <ul>
-                <li><a class="item" href="homepage.html">Home</a></li>
-                <li><a class="item" href="services.html">Services</a></li>
-                <li><a class="item" href="about_us.html">About Us</a></li>
-                <li><a class="item" href="contact_us.html">Contact Us</a></li>
+                <li><a class="item" href="homepage.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a class="item" href="services.html"><i class="fas fa-dumbbell"></i> Services</a></li>
+                <li><a class="item" href="about_us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a class="item" href="contact_us.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -214,7 +244,7 @@
                     <input type="text" id="number" name="number" required>
                     <br>
                     <label for="gender">Gender:</label>
-                    <br>
+                    <br><br>
                     <div class="flex-row">
                         <input type="radio" id="male" name="gender" value="male" required>
                         <label for="male">Male</label>
@@ -225,7 +255,7 @@
                     </div>
                     <br><br>
                     <label for="membership">Membership Type:</label>
-                    <br>
+                    <br><br>
                     <select id="membership" name="membership" required>
                         <option value="">Select</option>
                         <option value="basic">Basic</option>
@@ -234,7 +264,7 @@
                     </select>
                     <br><br>
                     <label for="interests">Interests:</label>
-                    <br>
+                    <br><br>
                     <div class="flex-row">
                         <input type="checkbox" id="weightlifting" name="interests" value="weightlifting">
                         <label for="weightlifting">Weightlifting</label>

@@ -7,6 +7,7 @@
     <title>GymX - Your Fitness Journey Starts Here</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         * {
             padding: 0;
@@ -117,15 +118,27 @@
             margin-top: 10px;
             font-size: 0.9em;
         }
+
+        #map {
+            height: 350px;
+            width: 100%;
+            border: 1px solid black;
+            margin-top: 20px;
+        }
+        body nav a h1{
+            display: inline;
+            font-size: 36px;
+        }
     </style>
 </head>
-
+    
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="https://cdn5.vectorstock.com/i/1000x1000/19/09/information-icon-dumbbell-vector-10311909.jpg"
-                width="30" height="30" class="flex-direction" alt="GymX Logo">
-            GymX
+            <svg width="30" height="30" class="d-inline-block align-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                <img src="gym-near-svgrepo-com.svg" width="70" height="70" alt="GymX Logo">
+            </svg>
+        <h1>GymX</h1>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -151,6 +164,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <section>
         <div id="section3">
@@ -204,7 +218,8 @@
                     <li>Twitter:<a href="https://twitter.com/?lang=en">www.twitter.com</a></li><br>
                 </ul>
                 <h2>Find Us</h2>
-                <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=77.59793758392335%2C12.929771824182472%2C77.61173486709596%2C12.93737380710079&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
+                <div id="map"></div>
+                <br/><small>
         </div>
     </section>
     <footer>
@@ -218,6 +233,17 @@
             <p>&copy; 2024 GymX. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        var map = L.map('map').setView([12.933, 77.605], 16); 
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
+        }).addTo(map);
+
+        L.marker([12.9344, 77.605]).addTo(map)
+            .bindPopup('<b>GymX is located here!</b><br>').openPopup();
+    </script>
 </body>
 
 </html>
