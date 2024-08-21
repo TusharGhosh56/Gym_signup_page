@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locations SYSTEM "locations.dtd">
+<locations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="locations.xsd">
+    <location id="1">
+        <name>GymX</name>
+        <address>123 Fitness St, Health City</address>
+        <contact>
+            <phone>123-741-2984</phone>
+            <email>contact@gymx.com</email>
+        </contact>
+        <hours>
+            <weekday>6:00 AM - 10:00 PM</weekday>
+            <weekend>8:00 AM - 8:00 PM</weekend>
+        </hours>
+        
+    </location>
+    <location id="2">
+        <name>ParkFit</name>
+        <address>456 Wellness Rd, Fit Town</address>
+        <contact>
+            <phone>123-456-7890</phone>
+            <email>info@parkfit.com</email>
+        </contact>
+        <hours>
+            <weekday>7:00 AM - 9:00 PM</weekday>
+            <weekend>9:00 AM - 7:00 PM</weekend>
+        </hours>
+        
+    </location>
+</locations>

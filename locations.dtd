@@ -1,0 +1,11 @@
+<!ELEMENT locations (location+)>
+<!ELEMENT location (name, address, contact, hours)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT contact (phone, email)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT hours (weekday, weekend)>
+<!ELEMENT weekday (#PCDATA)>
+<!ELEMENT weekend (#PCDATA)>
+<!ATTLIST location id ID #REQUIRED>

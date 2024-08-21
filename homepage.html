@@ -9,197 +9,226 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-size: 20px;
-        }
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
 
-        html, body {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
 
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
-        nav {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            justify-content: center;
-        }
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
 
-        nav ul li {
-            margin: 0 15px;
-        }
+nav ul li {
+    margin: 0 15px;
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-        }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
 
-        nav ul li a:hover {
-            color: #333;
-            background-color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
+nav ul li a:hover {
+    color: #333;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
-        #navibar img {
-            border-radius: 50%;
-            height: 70px;
-            margin-top: 20px;
-        }
+#navibar img {
+    border-radius: 50%;
+    height: 70px;
+    margin-top: 20px;
+}
 
-        #maintext {
-            background-color: #444;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-            font-size: 24px;
-        }
+#maintext {
+    background: url("girl-running.jpg") no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+}
 
-        #maintext h1 {
-            font-size: 36px;
-        }
+#maintext::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0; 
+}
 
-        #maintext p {
-            font-size: 20px;
-        }
+#maintext h1 {
+    font-size: 48px;
+    position: relative;
+    z-index: 1;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            color: #fff;
-            background-color: olivedrab;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
+#maintext p {
+    font-size: 24px;
+    position: relative;
+    z-index: 1;
+}
 
-        .btn:hover {
-            background-color: darkgreen;
-        }
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: olivedrab;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 1;
+    margin: 10px;
+}
 
-        #home {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin: 50px 20px;
-        }
+.btn:hover {
+    background-color: darkgreen;
+}
 
-        .primary-home {
-            background-color: white;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            width: 30%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 20px;
-        }
+#home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: -612px 20px; 
+    position: relative;
+    z-index: 2; 
+}
 
-        .primary-home img {
-            height: 100px;
-            margin-bottom: 15px;
-        }
+.primary-home {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .primary-home p {
-            font-size: 0.9em;
-        }
+.primary-home:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
 
-        @media (max-width: 768px) {
-            #home {
-                flex-direction: column;
-                align-items: center;
-            }
+.primary-home img {
+    height: 100px;
+    margin-bottom: 15px;
+}
 
-            .primary-home {
-                width: 80%;
-            }
+.primary-home p {
+    font-size: 0.9em;
+}
 
-            nav ul {
-                flex-direction: column;
-            }
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column;
+        align-items: center;
+    }
 
-            nav ul li {
-                margin: 5px 0;
-            }
-        }
+    .primary-home {
+        width: 80%;
+    }
 
-        #navibar a {
-            color: white;
-            text-decoration: none;
-        }
+    nav ul {
+        flex-direction: column;
+    }
 
-        #navibar h1 {
-            display: inline;
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+#navibar a {
+    color: white;
+    text-decoration: none;
+}
+
+#navibar h1 {
+    display: inline;
     font-size: 36px;
     margin: 3px;
     padding: 1px;
     margin-bottom: 10px;
     margin-top: 26px;
-        }
+}
 
-        #navibar .logo {
-            display: flex;
-            align-items: center;
-        }
+#navibar .logo {
+    display: flex;
+    align-items: center;
+}
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
 
-        footer ul {
-            list-style: none;
-            padding: 0;
-        }
+footer ul {
+    list-style: none;
+    padding: 0;
+}
 
-        footer ul li {
-            display: inline;
-            margin: 0 10px;
-        }
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
 
-        footer ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
 
-        footer ul li a:hover {
-            color: olivedrab;
-        }
+footer ul li a:hover {
+    color: olivedrab;
+}
 
-        footer p {
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
+footer p {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
     </style>
 </head>
 
@@ -226,6 +255,8 @@
                     aspernatur cum enim suscipit error exercitationem quaerat, officiis, quisquam quas earum aliquam! Vero
                     libero ipsum, vel sed amet reiciendis?</p>
                 <a href="form.html" class="btn">Join Now</a>
+                <a href="services.html" class="btn">Learn More</a>
+               
             </div>
         </section>
         <section id="section2">
@@ -244,6 +275,21 @@
                     <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
                     <h3>Nutrition Guidance</h3>
                     <p>Receive expert advice on how to fuel your body for optimal performance and health.</p>
+                </div>
+                <div class="primary-home">
+                    <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
+                    <h3>Personal Training</h3>
+                    <p>Our personal trainers are here to guide and motivate you through every step of your fitness journey.</p>
+                </div>
+                <div class="primary-home">
+                    <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
+                    <h3>Personal Training</h3>
+                    <p>Our personal trainers are here to guide and motivate you through every step of your fitness journey.</p>
+                </div>
+                <div class="primary-home">
+                    <img src="https://png.pngtree.com/png-vector/20220903/ourmid/pngtree-shining-bright-light-bulb-png-image_6136095.png" alt="Service Image">
+                    <h3>Personal Training</h3>
+                    <p>Our personal trainers are here to guide and motivate you through every step of your fitness journey.</p>
                 </div>
             </div>
         </section>

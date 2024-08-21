@@ -13,11 +13,12 @@
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            font-size: 20px
+            font-size: 20px;
         }
 
         body {
-            background: url('image3.jpg');
+            background: url('image3.jpg') no-repeat center center fixed;
+            background-size: cover;
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
@@ -83,10 +84,12 @@
         }
 
         footer {
+            
             background-color: #333;
             color: #fff;
             padding: 20px 0;
             text-align: center;
+            margin-top: auto;
         }
 
         .form-control {
@@ -125,20 +128,38 @@
             border: 1px solid black;
             margin-top: 20px;
         }
-        body nav a h1{
+
+        body nav a h1 {
             display: inline;
             font-size: 36px;
         }
+    
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
     </style>
 </head>
-    
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             <svg width="30" height="30" class="d-inline-block align-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <img src="gym-near-svgrepo-com.svg" width="70" height="70" alt="GymX Logo">
             </svg>
-        <h1>GymX</h1>
+            <h1>GymX</h1>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -161,6 +182,7 @@
             </ul>
         </div>
     </nav>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -171,32 +193,25 @@
             <div class="form">
                 <h1>Contact Us</h1>
                 We’d love to hear from you! Whether you have questions about our classes, membership options,
-                facilities, or anything else, our team is here to help.<br>
-                <br><br>
+                facilities, or anything else, our team is here to help.<br><br>
                 <h2>Get in Touch:</h2><br>
                 <ul>
                     <li>Phone: 1237412984217</li><br>
                     <li>Email: xyz@gmail.com</li><br>
                     <li>Address: sadjhih,ashdiuh,asdiuadh</li><br>
                 </ul>
-                <h2>Business Hours:</h2><br>
-                <br>
+                <h2>Business Hours:</h2><br><br>
                 <ul>
                     <li>Monday to Friday: 6:00 AM - 10:00 PM</li><br>
                     <li>Saturday: 8:00 AM - 8:00 PM</li><br>
                     <li>Sunday: 9:00 AM - 6:00 PM</li><br>
-                </ul>
-                <br>
+                </ul><br>
                 <h2>Visit Us</h2><br>
                 Feel free to stop by during our business hours for a tour of our facilities or to speak with a member of
-                our team.
-
-                <br>
-                <br>
+                our team.<br><br>
                 <h2>Send Us a Message</h2><br>
                 Have a question or feedback? Use the form below to send us a message, and we'll get back to you as soon
-                as possible.
-                <br><br>
+                as possible.<br><br>
                 <form>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Name" required>
@@ -208,20 +223,36 @@
                         <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-                <br><br>
+                </form><br><br>
                 <h2>Follow Us</h2><br>
                 Stay updated with the latest news, events, and promotions by following us on social media.
                 <ul>
                     <li>Facebook:<a href="https://www.facebook.com/">www.facebook.com</a></li><br>
-                    <li>Instagram:<a href="https://www.instagram.com/">www.intagram.com</a></li><br>
+                    <li>Instagram:<a href="https://www.instagram.com/">www.instagram.com</a></li><br>
                     <li>Twitter:<a href="https://twitter.com/?lang=en">www.twitter.com</a></li><br>
                 </ul>
                 <h2>Find Us</h2>
                 <div id="map"></div>
-                <br/><small>
+                <br><small></small>
+            </div>
+            <h2>Gym timings and Other details</h2>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Weekday Hours</th>
+                        <th>Weekend Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </section>
+
     <footer>
         <div>
             <ul>
@@ -234,16 +265,56 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        var map = L.map('map').setView([12.933, 77.605], 16); 
+        var map = L.map('map').setView([12.9344, 77.605], 17); 
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19
         }).addTo(map);
 
-        L.marker([12.9344, 77.605]).addTo(map)
-            .bindPopup('<b>GymX is located here!</b><br>').openPopup();
+        var gymX = L.marker([12.9344, 77.605]).addTo(map)
+            .bindPopup('<b>GymX</b><br>123 Fitness St, Health City').openPopup();
+
+        var parkFit = L.marker([12.9350, 77.606]).addTo(map)
+            .bindPopup('<b>ParkFit</b><br>456 Wellness Rd, Fit Town').openPopup();
+
+        
+        var route = L.polyline([
+            [12.9344, 77.605],
+            [12.9350, 77.606]
+        ], {color: 'blue'}).addTo(map);
+        
+            function loadTableData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'gym_data.xml', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var xml = xhr.responseXML;
+                    var locations = xml.getElementsByTagName('location');
+                    var tableBody = document.getElementById('data-table').getElementsByTagName('tbody')[0];
+
+                    for (var i = 0; i < locations.length; i++) {
+                        var location = locations[i];
+                        var row = tableBody.insertRow();
+
+                        row.insertCell(0).textContent = location.getElementsByTagName('name')[0].textContent;
+                        row.insertCell(1).textContent = location.getElementsByTagName('address')[0].textContent;
+                        row.insertCell(2).textContent = location.getElementsByTagName('contact')[0].getElementsByTagName('phone')[0].textContent;
+                        row.insertCell(3).textContent = location.getElementsByTagName('contact')[0].getElementsByTagName('email')[0].textContent;
+                        row.insertCell(4).textContent = location.getElementsByTagName('hours')[0].getElementsByTagName('weekday')[0].textContent;
+                        row.insertCell(5).textContent = location.getElementsByTagName('hours')[0].getElementsByTagName('weekend')[0].textContent;
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        document.addEventListener('DOMContentLoaded', loadTableData);
+
     </script>
+
+    
 </body>
 
 </html>
