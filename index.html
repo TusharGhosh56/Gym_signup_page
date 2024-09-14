@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            color: #333;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        #fetchbooks, #search, #sorting, #genreFilter, #rankFilter {
+            padding: 10px;
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        #fetchbooks {
+            background-color: olivedrab;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #fetchbooks:hover {
+            background-color: darkgreen;
+        }
+
+        #search, #sorting, #genreFilter, #rankFilter {
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #books-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        .book-item {
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .book-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        #pagination-container {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #pagination-container button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: olivedrab;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #pagination-container button:hover {
+            background-color: darkgreen;
+        }
+
+        #error-message {
+            color: red;
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: olivedrab;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <button id="fetchbooks">Fetch Books</button>
+    <input type="text" placeholder="Search book Name" id="search">
+    <select id="sorting">
+        <option value="asc">Name Ascending</option>
+        <option value="desc">Name Descending</option>
+    </select>
+    <select id="rankFilter">
+        <option value="all">rating</option>
+        <option value="top10">fiction</option>
+        <option value="top50">non fiction</option>
+    </select>
+    <div id="error-message"></div>
+    <div id="books-container">
+        <!-- Book items will be displayed here -->
+    </div>
+    <div id="pagination-container">
+        <!-- Pagination buttons will be displayed here -->
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+        </ul>
+        <p>&copy; 2024 Book Fetcher. All Rights Reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
