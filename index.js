@@ -4,8 +4,7 @@ const booksPerPage = 6;
 let currentPage = 1;
 const apiUrl = 'https://api.nytimes.com/svc/books/v3/lists/2019-01-20/hardcover-fiction.json?api-key=QTd4H7HDVpLKhqIqtV42NmAthrt8ub4b';
 
-// Function to fetch books from the API
-// Function to fetch books from the API
+
 async function fetchBooks() {
     try {
         const response = await fetch(apiUrl);
@@ -16,10 +15,10 @@ async function fetchBooks() {
         books = data.results.books.map(book => {
             return {
                 ...book,
-                rating: book.rating || 0  // Assuming 'rating' exists or default to 0 if not present
+                rating: book.rating || 0  
             };
         });
-        filteredBooks = books; // Initialize filteredBooks
+        filteredBooks = books; 
         paginateBooks();
     } catch (error) {
         document.getElementById('error-message').textContent = `Error fetching books: ${error.message}`;
@@ -28,7 +27,7 @@ async function fetchBooks() {
 }
 
 
-// Function to display books on the page
+
 function displayBooks(booksToDisplay) {
     const booksContainer = document.getElementById('books-container');
     booksContainer.innerHTML = '';
@@ -45,7 +44,7 @@ function displayBooks(booksToDisplay) {
     });
 }
 
-// Function to handle pagination
+
 function displayPagination(totalBooks, booksPerPage) {
     const paginationContainer = document.getElementById('pagination-container');
     paginationContainer.innerHTML = '';
@@ -66,7 +65,6 @@ function displayPagination(totalBooks, booksPerPage) {
     }
 }
 
-// Function to paginate books
 function paginateBooks() {
     const startIndex = (currentPage - 1) * booksPerPage;
     const endIndex = startIndex + booksPerPage;
@@ -75,15 +73,15 @@ function paginateBooks() {
     displayPagination(filteredBooks.length, booksPerPage);
 }
 
-// Function to handle book search
+
 function searchBooks() {
     const searchTerm = document.getElementById('search').value.toLowerCase();
     filteredBooks = books.filter(book => book.title.toLowerCase().includes(searchTerm));
-    currentPage = 1; // Reset to the first page after search
+    currentPage = 1; 
     paginateBooks();
 }
 
-// Function to sort books
+
 function sortBooks() {
     const sortOrder = document.getElementById('sorting').value;
     filteredBooks.sort((a, b) => {
@@ -93,20 +91,20 @@ function sortBooks() {
             return b.title.localeCompare(a.title);
         }
     });
-    currentPage = 1; // Reset to the first page after sorting
+    currentPage = 1; 
     paginateBooks();
 }
-// Function to filter books by rating
+
 function filterByRating() {
     const selectedRating = document.getElementById('rankFilter').value;
     if (selectedRating === 'top10') {
-        filteredBooks = books.filter(book => book.rating && book.rating >= 4.5);  // Books with ratings of 4.5 and above
+        filteredBooks = books.filter(book => book.rating && book.rating >= 4.5);  
     } else if (selectedRating === 'top50') {
-        filteredBooks = books.filter(book => book.rating && book.rating >= 3.0);  // Books with ratings of 3.0 and above
+        filteredBooks = books.filter(book => book.rating && book.rating >= 3.0);  
     } else {
-        filteredBooks = books;  // Show all books if "all" is selected
+        filteredBooks = books; 
     }
-    currentPage = 1;  // Reset to the first page after filtering
+    currentPage = 1;
     paginateBooks();
 }
 
